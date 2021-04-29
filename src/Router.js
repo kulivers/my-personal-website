@@ -4,6 +4,7 @@ import About from "./pages/About";
 import MyWorks from "./pages/MyWorks";
 import App from "./App";
 import MenuBar from "./components/nav/MenuBar";
+import GradientButton from "./playground/GradientButton";
 const RouterComponent = () => {
   return (
     <React.Fragment>

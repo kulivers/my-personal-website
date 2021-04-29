@@ -12,7 +12,7 @@ const MenuBar = (props) => {
       <Logo name="Coolson" />
       <NavLinks isOpen={isOpen}>
         <Li>
-          <Link to="/myWorks">my works </Link>
+          <Link to="/myWorks" >my works </Link>
         </Li>
         <Li>
           <Link to="/about">about</Link>
@@ -49,10 +49,8 @@ const Burger = styled.div`
     width: 25px;
     margin: 5px;
   }
-
   @media screen and (max-width: 780px) {
     display: block;
-    //margin-left: 300px;
   }
 `;
 
@@ -61,7 +59,7 @@ const NavLinks = styled.ul`
   display: flex;
   justify-content: space-around;
   @media screen and (max-width: 780px) {
-    display: ${(props) => (props.isOpen ? "flex" : "none")};
+    display: flex;
     position: absolute;
     right: 0;
     height: 100vh;
@@ -71,6 +69,11 @@ const NavLinks = styled.ul`
     flex-direction: column;
     justify-content: center;
     margin-top: 0;
+
+    //transform: translateX(100%);
+    transform: ${(props) =>
+      props.isOpen ? "translateX(0)" : "translateX(100%)"};
+    transition: transform 0.2s ease-in;
   }
 `;
 
@@ -86,15 +89,37 @@ const Li = styled.li`
     padding: 16px;
     text-decoration: none;
     letter-spacing: 1px;
-    border-radius: 20px;
+    border-radius: 5px;
 
     &:hover {
       text-decoration: none;
       color: white;
-      background: linear-gradient(
-        rgba(255, 180, 27, 0.89),
-        rgba(255, 48, 13, 0.89)
-      );
+      background: linear-gradient(-45deg, #ffa63d, #ff3d77, #338aff, #3cf0c5);
+      background-size: 600%;
+      -webkit-animation: anime 3s linear infinite;
+      animation: anime 3s linear infinite;
+      @-webkit-keyframes anime {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      @keyframes anime {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
     }
   }
 `;
