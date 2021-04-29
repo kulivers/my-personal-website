@@ -1,0 +1,23 @@
+.logo-container {
+  margin-left: 0;
+  display: flex;
+  flex-direction: row;
+
+}
+.bike-logo {
+  display: block;
+  margin: auto;
+  height: 70px;
+  width: 70px;
+}
+
+.logo-header {
+  color: aliceblue;
+  text-decoration: none;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: auto;
+
+
+}

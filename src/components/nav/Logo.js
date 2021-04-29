@@ -1,26 +1,14 @@
-import styled from "styled-components";
-
-const Text = styled.header`
-  //background-color: rgba(255, 244, 244, 0.3);
-  color: aliceblue;
-  font-weight: 700;
-  text-decoration: none;
-  font-size: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin: 10% auto;
-`;
-
-const Container = styled.div`
-  //background-color: rgba(255, 0, 0, 0.3);
-  //margin-left: 40px;
-`;
+import logo, {
+  ReactComponent as BikeLogo,
+} from "./undraw_Ride_a_bicycle_2yok 12.svg";
+import "./Logo.css";
 
 const Logo = ({ name }) => {
   return (
-    <Container>
-      <Text>{name}</Text>
-    </Container>
+    <div className="logo-container">
+      <BikeLogo className="bike-logo" />
+      <span className="logo-header">{name}</span>
+    </div>
   );
 };
 export default Logo;
