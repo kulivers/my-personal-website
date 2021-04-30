@@ -1,12 +1,6 @@
-1. edit link buttons
-https://stackoverflow.com/questions/42463263/wrapping-a-react-router-link-in-an-html-button
-https://www.youtube.com/watch?v=U-ePoM4EDXA&ab_channel=OnlineTutorials 1:58
-https://www.youtube.com/watch?v=Q4ta_NZOYwE&t=0s&ab_channel=OnlineTutorials - tutorial
 
 
 
-2. animation nav menu
-https://www.youtube.com/watch?v=QNTeq4QdOsQ&ab_channel=OnlineTutorials 3:25
 
 
 

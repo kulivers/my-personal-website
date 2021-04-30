@@ -4,19 +4,25 @@ import About from "./pages/About";
 import MyWorks from "./pages/MyWorks";
 import App from "./App";
 import MenuBar from "./components/nav/MenuBar";
-import GradientButton from "./playground/GradientButton";
+import GrandientButton from "./components/GradButtonWithLink";
+import Burger from "./components/Burger";
 const RouterComponent = () => {
   return (
-    <React.Fragment>
-      <BrowserRouter>
-        <MenuBar />
-        <Switch>
-          <Route exact path="/" component={App} />
-          <Route path="/About" component={About} />
-          <Route path="/myWorks" component={MyWorks} />
-        </Switch>
-      </BrowserRouter>
-    </React.Fragment>
+    <BrowserRouter>
+      <MenuBar />
+      <Switch>
+        <Route exact path="/" component={App} />
+        <Route path="/About" component={About} />
+        <Route path="/myWorks" component={MyWorks} />
+      </Switch>
+      <GrandientButton style={{ width: "300px" }}>sadada</GrandientButton>
+      <Burger
+        onClick={() => {
+          console.log("Dont Click on burger!!");
+        }}
+        show
+      />
+    </BrowserRouter>
   );
 };
 export default RouterComponent;
