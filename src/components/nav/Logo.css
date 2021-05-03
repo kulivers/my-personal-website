@@ -2,13 +2,16 @@
   margin-left: 0;
   display: flex;
   flex-direction: row;
-
 }
+
 .bike-logo {
   display: block;
   margin: auto;
   height: 70px;
   width: 70px;
+}
+.bike-logo g {
+  transform: translateX(20px);
 }
 
 .logo-header {

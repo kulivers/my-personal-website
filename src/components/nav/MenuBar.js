@@ -6,9 +6,8 @@ import GradButtonWithLink from "../GradButtonWithLink";
 import BurgerB from "../Burger";
 const MenuBar = () => {
   const [isOpen, toggleOpen] = useState(false);
-
   return (
-    <MainMenu>
+    <MainMenu isOpen={isOpen}>
       <Logo name="Coolson" />
       <NavLinks isOpen={isOpen}>
         <GradButtonWithLink
@@ -66,26 +65,33 @@ const MenuBar = () => {
 export default MenuBar;
 
 const Burger = styled.div`
-  display: none;
-  margin: auto 0;
-  cursor: pointer;
-  z-index: 9999;
-  div {
-    background-color: white;
-    height: 3px;
-    width: 25px;
-    margin: 5px;
-  }
-  @media screen and (max-width: 780px) {
-    display: block;
-  }
+  //  display: none;
+  //  margin: auto 0;
+  //  cursor: pointer;
+  //  z-index: 9999;
+  //  div {
+  //    background-color: white;
+  //    height: 3px;
+  //    width: 25px;
+  //    margin: 5px;
+  //  }
+  //  @media (max-width: 780px) {
+  //    //screen and
+  //    display: block;
+  //    body {
+  //      display: none;
+  //    }
+  //  }
+  //
 `;
 
 const NavLinks = styled.ul`
   width: 50%;
   display: flex;
   justify-content: space-around;
-  @media screen and (max-width: 780px) {
+  @media (max-width: 780px) {
+    //screen and
+    // display: ${(props) => (props.isOpen ? "flex" : "none")};
     display: flex;
     position: absolute;
     right: 0;
@@ -105,7 +111,6 @@ const NavLinks = styled.ul`
 `;
 
 const MainMenu = styled.nav`
-  position: relative;
   background: #2f2b2b;
   display: flex;
   flex-direction: row;
@@ -113,12 +118,9 @@ const MainMenu = styled.nav`
   width: 100%;
   min-height: 8vh;
   font-family: "Poppins", sans-serif;
-
-  @media screen and (max-width: 780px) {
+  position: ${(props) => (props.isOpen ? "fixed" : "relative")};
+  @media (max-width: 780px) {
     display: flex;
     justify-content: space-between;
-    ${Burger} {
-      margin-right: 3vh;
-    }
   }
 `;

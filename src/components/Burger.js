@@ -15,7 +15,8 @@ const BurgerDiv = styled.div`
     width: 25px;
     margin: 5px;
   }
-  @media screen and (max-width: 780px) {
+  @media (max-width: 780px) {
+    //screen and
     display: block;
   }
   .line1 {

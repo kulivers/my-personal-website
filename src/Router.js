@@ -4,8 +4,7 @@ import About from "./pages/About";
 import MyWorks from "./pages/MyWorks";
 import App from "./App";
 import MenuBar from "./components/nav/MenuBar";
-import GrandientButton from "./components/GradButtonWithLink";
-import Burger from "./components/Burger";
+
 const RouterComponent = () => {
   return (
     <BrowserRouter>
@@ -15,13 +14,14 @@ const RouterComponent = () => {
         <Route path="/About" component={About} />
         <Route path="/myWorks" component={MyWorks} />
       </Switch>
-      <GrandientButton style={{ width: "300px" }}>sadada</GrandientButton>
-      <Burger
-        onClick={() => {
-          console.log("Dont Click on burger!!");
+      <div
+        style={{
+          background: "rgba(255, 48, 13, 0.41)",
+          height: "1120px",
         }}
-        show
-      />
+      >
+        big div
+      </div>
     </BrowserRouter>
   );
 };
