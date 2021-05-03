@@ -22,3 +22,12 @@
   letter-spacing: 2px;
   margin: auto;
 }
+@media (max-width: 310px) {
+  .logo-header {
+    font-size: 1.7rem;
+  }
+  .bike-logo{
+    height: 65px;
+    width: 65px;
+  }
+}
