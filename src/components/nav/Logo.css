@@ -41,7 +41,7 @@
 }
 
 .bike-logo g #Other {
-  animation: bike 1s ease-in-out alternate infinite;
+  animation: bike 1s ease-out alternate infinite;
   transform-origin: bottom;
 }
 
