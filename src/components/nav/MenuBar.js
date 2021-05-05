@@ -4,7 +4,7 @@ import Logo from "./elements/Logo";
 import { useState } from "react";
 import GradButtonWithLink from "./elements/GradButtonWithRouterLink";
 import BurgerB from "./elements/Burger";
-import Experiments from "../../pages/Experiments";
+
 export const MenuBar = () => {
   const [isOpen, toggleOpen] = useState(false);
   return (
