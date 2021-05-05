@@ -1,9 +1,8 @@
 import GradButton from "./GrandientButton";
 
 import { withRouter } from "react-router";
-
 const LinkButton = (props) => {
-  const { history, location, match, to, onClick, children, ...rest } = props;
+  const { history, onClick, to, children, ...rest } = props; //location, match, to,
   return (
     <GradButton
       {...rest}
@@ -16,5 +15,10 @@ const LinkButton = (props) => {
     </GradButton>
   );
 };
+
+//it could be like:
+// const LinkButton2 = styled(LinkFromRouterDom)`
+// someStyles
+// `
 
 export default withRouter(LinkButton);

@@ -1,9 +1,3 @@
-.logo-container {
-  margin-left: 0;
-  display: flex;
-  flex-direction: row;
-}
-
 .logo-header {
   color: aliceblue;
   text-decoration: none;
@@ -11,7 +5,24 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   margin: auto;
+  transition: 0.5s;
+  background: linear-gradient(-45deg, #ffa63d, #ff3d77, #338aff, #3cf0c5);
+  background-size: 600%;
+  background-position: 90%;
+  background-clip: text;
+  cursor: pointer;
 }
+.logo-header:hover {
+  color: transparent;
+  font-size: 2.5rem;
+}
+
+.logo-container {
+  margin-left: 0;
+  display: flex;
+  flex-direction: row;
+}
+
 @media (max-width: 310px) {
   .logo-header {
     font-size: 1.7rem;
@@ -23,11 +34,15 @@
 }
 
 .bike-logo {
+  cursor: pointer;
   display: block;
   margin: auto;
   height: 70px;
   width: 70px;
+  transition: 0.5s;
+
 }
+
 .bike-logo g {
   transform: translateX(20px);
 }

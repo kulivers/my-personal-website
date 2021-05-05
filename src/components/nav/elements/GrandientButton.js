@@ -5,11 +5,12 @@ const GradientButton = ({ children, ...props }) => {
 };
 
 const Button = styled.button`
+  text-decoration: none;
+
   display: block;
   color: white;
   text-align: center;
   padding: 16px;
-  text-decoration: none;
   letter-spacing: 1px;
   border-radius: 5px;
   line-height: 1;
@@ -18,6 +19,13 @@ const Button = styled.button`
   text-transform: uppercase;
   //border: rgba(255, 247, 251, 0.05) 1px solid;
   border: 0;
+
+  &:active {
+    text-decoration: underline;
+    text-decoration-color: #ea215a;
+    text-decoration-thickness: 0.125em;
+    text-underline-offset: 1.5px;
+  }
 
   &:hover {
     text-decoration: none;

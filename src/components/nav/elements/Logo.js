@@ -1,6 +1,6 @@
 import logo, {
   ReactComponent as BikeLogo,
-} from "./undraw_Ride_a_bicycle_2yok 12.svg";
+} from "../undraw_Ride_a_bicycle_2yok 12.svg";
 import "./Logo.css";
 
 const Logo = ({ name }) => {
@@ -8,6 +8,14 @@ const Logo = ({ name }) => {
     <div className="logo-container">
       <BikeLogo className="bike-logo" />
       <span className="logo-header">{name}</span>
+
+      {/*{name.split("").map((char, index) => {*/}
+      {/*  return (*/}
+      {/*    <span className="logo-header" key={index}>*/}
+      {/*      {char}*/}
+      {/*    </span>*/}
+      {/*  );*/}
+      {/*})}*/}
     </div>
   );
 };
