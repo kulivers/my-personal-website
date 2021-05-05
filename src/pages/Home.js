@@ -1,5 +1,5 @@
-function App() {
+function Home() {
   return <div style={{ background: "white" }}>Home App page</div>;
 }
 
-export default App;
+export default Home;

@@ -1,12 +1,17 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const GradientButton = ({ children, ...props }) => {
   return <Button {...props}>{children}</Button>;
 };
 
 const Button = styled.button`
+  //text-decoration: underline;
+  //text-decoration-color: #ea215a;
+  //text-decoration-thickness: 0.125em;
+  //text-underline-offset: 1.5px;
   text-decoration: none;
-
+  font-family: "Poppins", sans-serif;
   display: block;
   color: white;
   text-align: center;
@@ -15,7 +20,6 @@ const Button = styled.button`
   border-radius: 5px;
   line-height: 1;
   background-color: transparent;
-  font-family: "Poppins", sans-serif;
   text-transform: uppercase;
   //border: rgba(255, 247, 251, 0.05) 1px solid;
   border: 0;

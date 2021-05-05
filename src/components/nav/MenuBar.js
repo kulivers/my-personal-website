@@ -2,30 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import Logo from "./elements/Logo";
 import { useState } from "react";
-import GradButtonWithLink from "./elements/GradButtonWithLink";
+import GradButtonWithLink from "./elements/GradButtonWithRouterLink";
 import BurgerB from "./elements/Burger";
+import Experiments from "../../pages/Experiments";
 export const MenuBar = () => {
   const [isOpen, toggleOpen] = useState(false);
   return (
     <MainMenu isOpen={isOpen}>
       <Logo name="Coolson" />
       <NavLinks isOpen={isOpen}>
-        <GradButtonWithLink
-          onClick={() => {
-            toggleOpen();
-          }}
-          to="/myWorks"
-        >
-          my&nbsp;works
-        </GradButtonWithLink>
-        <GradButtonWithLink
-          onClick={() => {
-            toggleOpen();
-          }}
-          to="/about"
-        >
-          about
-        </GradButtonWithLink>
         <GradButtonWithLink
           onClick={() => {
             toggleOpen();
@@ -38,9 +23,26 @@ export const MenuBar = () => {
           onClick={() => {
             toggleOpen();
           }}
+          to="/about"
+        >
+          about
+        </GradButtonWithLink>
+
+        <GradButtonWithLink
+          onClick={() => {
+            toggleOpen();
+          }}
           to="/contacts"
         >
           contacts
+        </GradButtonWithLink>
+        <GradButtonWithLink
+          onClick={() => {
+            toggleOpen();
+          }}
+          to="/experiments"
+        >
+          Experiments
         </GradButtonWithLink>
       </NavLinks>
       <BurgerB

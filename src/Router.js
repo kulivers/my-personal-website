@@ -1,14 +1,16 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Home from "./pages/Home";
+import Projects from "./pages/projects";
 import About from "./pages/About";
-import MyWorks from "./pages/MyWorks";
-import App from "./App";
+import Contacts from "./pages/contacts";
+import Experiments from "./pages/Experiments";
 import MenuBar from "./components/nav";
 import styled from "styled-components";
 
 const ComponentsContainer = styled.div`
   //position: static;
-  margin-top: 70px;
+  margin-top: 77px;
 `;
 
 const StyledRouter = styled(BrowserRouter)`
@@ -21,19 +23,12 @@ const RouterComponent = () => {
       <MenuBar />
       <ComponentsContainer>
         <Switch>
-          <Route exact path="/" component={App} />
+          <Route exact path="/" component={Home} />
+          <Route path="/projects" component={Experiments} />
           <Route path="/About" component={About} />
-          <Route path="/myWorks" component={MyWorks} />
+          <Route path="/contacts" component={Experiments} />
+          <Route path="/Experiments" component={Experiments} />
         </Switch>
-        <div
-          style={{
-            marginBlock: "150px",
-            background: "rgba(255, 48, 13, 0.41)",
-            height: "2120px",
-          }}
-        >
-          big div in router.js
-        </div>
       </ComponentsContainer>
     </StyledRouter>
   );
