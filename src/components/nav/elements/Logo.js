@@ -1,16 +1,15 @@
 import logo, {
   ReactComponent as BikeLogo,
 } from "../undraw_Ride_a_bicycle_2yok 12.svg";
+import { animateScroll } from "react-scroll";
 import "./Logo.css";
-import { useHistory } from "react-router-dom";
 
 const Logo = ({ name }) => {
-  const history = useHistory();
   return (
     <div
       className="logo-container"
       onClick={() => {
-        history.push("/");
+        animateScroll.scrollToTop();
       }}
     >
       <BikeLogo className="bike-logo" />

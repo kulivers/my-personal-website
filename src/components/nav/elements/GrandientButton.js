@@ -1,18 +1,9 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const GradientButton = ({ children, ...props }) => {
-  return <Button {...props}>{children}</Button>;
-};
-
 const Button = styled.button`
-  //text-decoration: underline;
-  //text-decoration-color: #ea215a;
-  //text-decoration-thickness: 0.125em;
-  //text-underline-offset: 1.5px;
-  text-decoration: none;
   font-family: "Poppins", sans-serif;
-  display: block;
+  //display: block;
   color: white;
   text-align: center;
   padding: 16px;
@@ -22,15 +13,12 @@ const Button = styled.button`
   font-size: medium;
   background-color: transparent;
   text-transform: uppercase;
-  //border: rgba(255, 247, 251, 0.05) 1px solid;
   border: 0;
 
-  &:active {
-    text-decoration: underline;
-    text-decoration-color: #ea215a;
-    text-decoration-thickness: 0.125em;
-    text-underline-offset: 1.5px;
-  }
+  text-decoration: ${(props) => (props.underline ? "underline" : "none")};
+  text-decoration-color: #ea215a;
+  text-decoration-thickness: 0.125em;
+  text-underline-offset: 1.5px;
 
   &:hover {
     text-decoration: none;
@@ -63,4 +51,13 @@ const Button = styled.button`
     }
   }
 `;
+const GradientButton = ({ children, underline, ...props }) => {
+  // console.clear();
+  // console.log({ children }, ": ", underline);
+  return (
+    <Button underline={underline} {...props}>
+      {children}
+    </Button>
+  );
+};
 export default GradientButton;

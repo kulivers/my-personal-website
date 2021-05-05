@@ -2,48 +2,49 @@ import React from "react";
 import styled from "styled-components";
 import Logo from "./elements/Logo";
 import { useState } from "react";
-import GradButtonWithLink from "./elements/GradButtonWithRouterLink";
+import GradButtonWithScrollLink from "./elements/GradButtonWithScrollLink";
 import BurgerB from "./elements/Burger";
-import Experiments from "../../pages/Experiments";
+
 export const MenuBar = () => {
   const [isOpen, toggleOpen] = useState(false);
+
   return (
     <MainMenu isOpen={isOpen}>
       <Logo name="Coolson" />
       <NavLinks isOpen={isOpen}>
-        <GradButtonWithLink
+        <GradButtonWithScrollLink
           onClick={() => {
             toggleOpen();
           }}
-          to="/projects"
+          to="projects"
         >
           projects
-        </GradButtonWithLink>
-        <GradButtonWithLink
+        </GradButtonWithScrollLink>
+        <GradButtonWithScrollLink
           onClick={() => {
             toggleOpen();
           }}
-          to="/about"
+          to="about"
         >
           about
-        </GradButtonWithLink>
+        </GradButtonWithScrollLink>
 
-        <GradButtonWithLink
+        <GradButtonWithScrollLink
           onClick={() => {
             toggleOpen();
           }}
-          to="/contacts"
+          to="contacts"
         >
           contacts
-        </GradButtonWithLink>
-        <GradButtonWithLink
+        </GradButtonWithScrollLink>
+        <GradButtonWithScrollLink
           onClick={() => {
             toggleOpen();
           }}
-          to="/experiments"
+          to="experiments"
         >
           Experiments
-        </GradButtonWithLink>
+        </GradButtonWithScrollLink>
       </NavLinks>
       <BurgerB
         onClick={() => {
@@ -56,22 +57,22 @@ export const MenuBar = () => {
 };
 export default MenuBar;
 
+
 const NavLinks = styled.ul`
   width: 50%;
   display: flex;
   justify-content: space-around;
   @media (max-width: 780px) {
-    //screen and
-    // display: ${(props) => (props.isOpen ? "flex" : "none")};
-    display: flex;
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     right: 0;
     height: 100vh;
     width: 100%;
     top: 0;
     background-color: #2f2b2b;
-    flex-direction: column;
-    justify-content: center;
     margin-top: 0;
     transform: ${(props) =>
       props.isOpen ? "translateX(0)" : "translateX(100%)"};

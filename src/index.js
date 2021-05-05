@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import Router from "./Router";
+import Router from "./App";
 import reportWebVitals from "./reportWebVitals";
-//comment for new brange
+
 ReactDOM.render(
   <React.StrictMode>
     <Router />
