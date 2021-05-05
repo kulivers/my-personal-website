@@ -19,6 +19,7 @@ const Button = styled.button`
   letter-spacing: 1px;
   border-radius: 5px;
   line-height: 1;
+  font-size: medium;
   background-color: transparent;
   text-transform: uppercase;
   //border: rgba(255, 247, 251, 0.05) 1px solid;
