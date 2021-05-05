@@ -1,6 +1,6 @@
 import GradButton from "./GrandientButton";
 
-import { withRouter } from "react-router";
+import { withRouter } from "react-router-dom";
 const LinkButton = (props) => {
   const { history, onClick, to, children, ...rest } = props; //location, match, to,
   return (
