@@ -9,7 +9,9 @@
   background: linear-gradient(-45deg, #ffa63d, #ff3d77, #338aff, #3cf0c5);
   background-size: 600%;
   background-position: 90%;
+  /*noinspection CssInvalidPropertyValue*/
   background-clip: text;
+  -webkit-background-clip: text;
   cursor: pointer;
 }
 .logo-header:hover {
@@ -23,21 +25,21 @@
   flex-direction: row;
 }
 
-@media (max-width: 310px) {
-  .logo-header {
-    font-size: 1.7rem;
-  }
-  .bike-logo {
-    height: 65px;
-    width: 65px;
-  }
-}
+/*@media (max-width: 310px) {*/
+/*  .logo-header {*/
+/*    font-size: 1.7rem;*/
+/*  }*/
+/*  .bike-logo {*/
+/*    height: 65px;*/
+/*    width: 65px;*/
+/*  }*/
+/*}*/
 
 .bike-logo {
   cursor: pointer;
   display: block;
   margin: auto;
-  height: 70px;
+  height: 80px;
   width: 70px;
   transition: 0.5s;
 

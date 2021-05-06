@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 import Logo from "./elements/Logo";
-import { useState } from "react";
 import GradButtonWithScrollLink from "./elements/GradButtonWithScrollLink";
 import BurgerB from "./elements/Burger";
 
 export const MenuBar = () => {
   const [isOpen, toggleOpen] = useState(false);
+
+  const [isTransparent, setTransparent] = useState(false);
+
+  const changeTransparent = useCallback(() => {
+    if (window.scrollY >= 80) {
+      setTransparent(true);
+    } else {
+      setTransparent(false);
+    }
+    console.log(window.scrollY);
+    console.log(isTransparent);
+  }, [isTransparent, setTransparent]);
+  useEffect(() => {
+    window.addEventListener("scroll", changeTransparent);
+  }, [changeTransparent]);
 
   return (
     <MainMenu isOpen={isOpen}>
@@ -57,6 +71,26 @@ export const MenuBar = () => {
 };
 export default MenuBar;
 
+//background: ${(props) => (props.isTransparent ? "transparent" : "#2f2b2b")}
+const MainMenu = styled.nav`
+  background: #2f2b2b;
+  z-index: 9999;
+
+  top: 0;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  min-height: 8vh;
+  font-family: "Poppins", sans-serif;
+  // position: ${(props) => (props.isOpen ? "fixed" : "relative")};
+  @media (max-width: 780px) {
+    display: flex;
+    justify-content: space-between;
+  }
+`;
+
 const NavLinks = styled.ul`
   width: 50%;
   display: flex;
@@ -76,23 +110,5 @@ const NavLinks = styled.ul`
     transform: ${(props) =>
       props.isOpen ? "translateX(0)" : "translateX(100%)"};
     transition: transform 0.3s ease-in;
-  }
-`;
-
-const MainMenu = styled.nav`
-  z-index: 9999;
-  top: 0;
-  position: fixed;
-  background: #2f2b2b;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 100%;
-  min-height: 8vh;
-  font-family: "Poppins", sans-serif;
-  // position: ${(props) => (props.isOpen ? "fixed" : "relative")};
-  @media (max-width: 780px) {
-    display: flex;
-    justify-content: space-between;
   }
 `;

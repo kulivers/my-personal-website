@@ -9,6 +9,23 @@ const HomeContainer = styled.section`
   align-items: center;
   //padding: 0 30px;
   z-index: 1;
+
+  :before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    //background: red;
+    z-index: 2;
+    background: linear-gradient(
+        180deg,
+        rgb(47, 43, 43) 0%,
+        rgba(248, 0, 0, 0.2) 100%
+      ),
+      linear-gradient(180deg, rgba(128, 117, 44, 0.2) 0%, transparent 100%);
+  }
 `;
 
 const HomeBg = styled.div`
@@ -39,14 +56,14 @@ const HomeContent = styled.div`
   align-items: center;
 `;
 
-const Home = (props) => {
+const Home = () => {
   return (
     <HomeContainer id="home">
       <HomeBg>
         <VideoBg autoPlay loop muted src={Video} type="MVI_0746.mov/" />
       </HomeBg>
       <HomeContent>
-        <h1 style={{ color: "wheat" }}>Some content</h1>
+        <h1 style={{ color: "wheat" }}>шото написано</h1>
       </HomeContent>
     </HomeContainer>
   );
