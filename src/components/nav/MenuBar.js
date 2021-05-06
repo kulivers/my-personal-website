@@ -57,7 +57,6 @@ export const MenuBar = () => {
 };
 export default MenuBar;
 
-
 const NavLinks = styled.ul`
   width: 50%;
   display: flex;
@@ -81,6 +80,7 @@ const NavLinks = styled.ul`
 `;
 
 const MainMenu = styled.nav`
+  z-index: 9999;
   top: 0;
   position: fixed;
   background: #2f2b2b;
