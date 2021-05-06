@@ -5,7 +5,12 @@ import { useEffect, useState } from "react";
 import { useWindowSize } from "../../../useWindowSizeHook";
 
 const StyledLinkS = styled(LinkS)`
-  display: contents;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 780px) {
+    width: 100%;
+  }
 `;
 
 const ScrollButton = (props) => {

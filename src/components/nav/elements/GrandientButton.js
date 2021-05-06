@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 
 const Button = styled.button`
   font-family: "Poppins", sans-serif;
-  //display: block;
+  display: block;
   color: white;
+  width: 100%;
   text-align: center;
   padding: 16px;
   letter-spacing: 1px;
@@ -14,7 +15,7 @@ const Button = styled.button`
   background-color: transparent;
   text-transform: uppercase;
   border: 0;
-
+  cursor: pointer;
   text-decoration: ${(props) => (props.underline ? "underline" : "none")};
   text-decoration-color: #ea215a;
   text-decoration-thickness: 0.125em;
