@@ -1,6 +1,4 @@
-import logo, {
-  ReactComponent as BikeLogo,
-} from "../undraw_Ride_a_bicycle_2yok 12.svg";
+import { ReactComponent as BikeLogo } from "../undraw_Ride_a_bicycle_2yok 12.svg";
 import { animateScroll } from "react-scroll";
 import "./Logo.css";
 

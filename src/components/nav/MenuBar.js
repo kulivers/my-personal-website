@@ -1,29 +1,24 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Logo from "./elements/Logo";
 import GradButtonWithScrollLink from "./elements/GradButtonWithScrollLink";
 import BurgerB from "./elements/Burger";
-
-export const MenuBar = () => {
+import useScrollPosition from "use-scroll-position";
+export const MenuBar = ({ homeHeight }) => {
   const [isOpen, toggleOpen] = useState(false);
-
+  const scrollPosition = useScrollPosition();
   const [isTransparent, setTransparent] = useState(false);
 
-  const changeTransparent = useCallback(() => {
-    if (window.scrollY >= 80) {
+  useEffect(() => {
+    if (scrollPosition < homeHeight - 80) {
       setTransparent(true);
     } else {
       setTransparent(false);
     }
-    console.log(window.scrollY);
-    console.log(isTransparent);
-  }, [isTransparent, setTransparent]);
-  useEffect(() => {
-    window.addEventListener("scroll", changeTransparent);
-  }, [changeTransparent]);
+  }, [homeHeight, scrollPosition]);
 
   return (
-    <MainMenu isOpen={isOpen}>
+    <MainMenu isOpen={isOpen} isTransparent={isTransparent} id="navbar">
       <Logo name="Coolson" />
       <NavLinks isOpen={isOpen}>
         <GradButtonWithScrollLink
@@ -34,6 +29,15 @@ export const MenuBar = () => {
         >
           projects
         </GradButtonWithScrollLink>
+        <GradButtonWithScrollLink
+          onClick={() => {
+            toggleOpen();
+          }}
+          to="skills"
+        >
+          skills
+        </GradButtonWithScrollLink>
+
         <GradButtonWithScrollLink
           onClick={() => {
             toggleOpen();
@@ -51,14 +55,6 @@ export const MenuBar = () => {
         >
           contacts
         </GradButtonWithScrollLink>
-        <GradButtonWithScrollLink
-          onClick={() => {
-            toggleOpen();
-          }}
-          to="experiments"
-        >
-          Experiments
-        </GradButtonWithScrollLink>
       </NavLinks>
       <BurgerB
         onClick={() => {
@@ -71,11 +67,10 @@ export const MenuBar = () => {
 };
 export default MenuBar;
 
-//background: ${(props) => (props.isTransparent ? "transparent" : "#2f2b2b")}
 const MainMenu = styled.nav`
-  background: #2f2b2b;
+  background: ${(props) => (props.isTransparent ? "transparent" : "#2f2b2b")};
+  transition: 0.3s;
   z-index: 9999;
-
   top: 0;
   position: fixed;
   display: flex;

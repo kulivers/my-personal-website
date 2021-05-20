@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 const Container = styled.section`
-  height: 1500px;
-  background-color: rgba(0, 13, 255, 0.41);
+  height: 100vh;
+  background-color: #5b5b87;
 `;
 
-const Projects = (props) => {
-  return <Container id="projects">Projects</Container>;
+const Projects = () => {
+  return <Container id="projects">here will be cards my projects</Container>;
 };
+
 export default Projects;

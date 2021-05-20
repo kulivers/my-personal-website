@@ -1,4 +1,6 @@
-
+animation on scroll:
+https://morioh.com/p/df79e7e676fa || https://www.npmjs.com/package/react-in-viewport
+https://github.com/roderickhsiao/react-in-viewport
 
 
 

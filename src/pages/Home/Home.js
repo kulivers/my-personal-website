@@ -3,7 +3,7 @@ import Video from "./MVI_0746.mov";
 const HomeContainer = styled.section`
   position: relative;
   display: flex;
-  height: 800px;
+  height: 100vh;
   background: #0c0c0c;
   justify-content: center;
   align-items: center;

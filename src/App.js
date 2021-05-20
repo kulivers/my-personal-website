@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Home from "./pages/Home/Home";
 import Projects from "./pages/Projects";
 import About from "./pages/About";
 import Contacts from "./pages/Contacts";
-import Experiments from "./pages/Experiments";
+import Skills from "./pages/Skills";
 import MenuBar from "./components/nav";
 import styled from "styled-components";
 
@@ -13,15 +13,22 @@ const ComponentsContainer = styled.div`
 `;
 
 const App = () => {
+  const [homeHeight, setHomeHeight] = useState(0);
+
+  useEffect(() => {
+    const height = document.getElementById("home").clientHeight;
+    setHomeHeight(height);
+  }, []);
+
   return (
     <React.Fragment>
-      <MenuBar />
+      <MenuBar homeHeight={homeHeight} />
       <ComponentsContainer>
         <Home />
         <Projects />
+        <Skills />
         <About />
         <Contacts />
-        <Experiments />
       </ComponentsContainer>
     </React.Fragment>
   );
