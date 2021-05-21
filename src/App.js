@@ -6,7 +6,7 @@ import Contacts from "./pages/Contacts";
 import Skills from "./pages/Skills";
 import MenuBar from "./components/nav";
 import styled from "styled-components";
-
+import ProgressBar from "./components/ProgressBar";
 const ComponentsContainer = styled.div`
   //position: static;
   //margin-top: 77px;
