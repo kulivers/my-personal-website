@@ -4,6 +4,8 @@ import ProgressBar from "../components/ProgressBar";
 
 const Container = styled.section`
   position: relative;
+  font-family: "Poppins", sans-serif;
+
   min-height: calc(100vh - 80px);
   display: flex;
   flex-direction: row;
@@ -26,26 +28,43 @@ const RightContainer = styled.div`
 const LoadingBlock = styled.div`
   height: 50%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
   //background-color: rgba(255, 0, 0, 0.29);
 `;
 
 const CardsContainer = styled.div`
   bottom: 0;
-  background-color: yellow;
+  background-color: transparent;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  position: absolute;
+  position: absolute; // when it doesnt contain text
   height: 50%;
   width: 100%;
-  padding: 10px;
+  padding: 20px 10px 20px 10px;
+  border: rgb(17, 19, 42) 1px solid;
+  border-radius: 20px;
+  box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.3),
+    5px 5px 5px rgba(0, 0, 0, 0.2), 15px 15px 15px rgba(0, 0, 0, 0.2);
 `;
 
 const Card = styled.div`
-  height: 100%;
-  width: 30%;
-  background-color: white;
+  background-color: ${(p) => p.color};
+  width: 90%;
+  height: 80%;
+  padding: 5px;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  margin: 5px;
+  border: rgb(17, 19, 42) 1px solid;
+  border-radius: 5px;
+  box-shadow: inset 0 0 60px 155px ${(p) => p.color};
+\`      ;
 `;
 
 const LeftContainer = styled.div`
@@ -55,10 +74,13 @@ const LeftContainer = styled.div`
 const InfoBlock = styled.div`
   background-color: #3cf0c5;
   height: 100%;
+  border-radius: 20px;
+  padding: 15px;
 `;
 
 const P = styled.p`
   color: white;
+  padding: 0 0 0 15px;
 `;
 
 const H1 = styled.h1`
@@ -66,10 +88,7 @@ const H1 = styled.h1`
 `;
 
 class Skills extends Component {
-  // const { reactVal, dotnetVal, tsqlVal } = this.props
-  reactV = 40;
-  dotV = 10;
-  tsqlV = 110;
+  // const [showSkillsAnimation, setShow] = useState(false);
   render() {
     return (
       <Container id="skills">
@@ -102,7 +121,28 @@ class Skills extends Component {
             <H1>T-SQL</H1>
             <ProgressBar percent={50} color="yellow" />
           </LoadingBlock>
-          <CardsContainer></CardsContainer>
+          <CardsContainer>
+            <Card color="rgba(0,255,255,0.22)">
+              <header>React</header>
+              <span style={{ fontSize: "0.9rem", fontFamily: "serif" }}>
+                some text sandak ndaks nkdnak dsakn dkandk adakna
+              </span>
+            </Card>
+            <Card color="rgba(255,0,244,0.22)">
+              <header>.NET</header>
+              <span style={{ fontSize: "1rem", fontFamily: "serif" }}>
+                some text sandak ndaks nkdnak dsakn dkandksome text sandak ndaks
+                nkdnak dsakn dkandksome text sandak ndaks nkdnak dsakn dkandk
+                adakna
+              </span>
+            </Card>
+            <Card color="rgba(217,255,0,0.22)">
+              <header> T-SQL</header>
+              <span style={{ fontSize: "0.9rem", fontFamily: "serif" }}>
+                some text sandak ndaks nkdnak dsakn
+              </span>
+            </Card>
+          </CardsContainer>
         </RightContainer>
       </Container>
     );

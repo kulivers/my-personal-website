@@ -9,7 +9,7 @@ const Li = styled.li`
 `;
 
 const Bar = styled.span`
-  background-color: #353b48;
+  background-color: transparent;
   display: block;
   height: 6px;
   border: 1px solid
