@@ -39,21 +39,38 @@ const SkillBar = styled.span`
   float: left;
   background: ${(p) => p.color};
   width: ${({ procents }) => procents}%;
-  animation: ${({ percent }) => load(percent)} 1s
+  animation: ${({ percent }) => load(percent)} 1.4s
     cubic-bezier(0.38, 1.27, 1, 0.91);
   animation-fill-mode: both;
+  animation-delay: ${(p) => p.delay};
 `;
 
-const ProgressBar = (props) => {
-  const { percent, color } = props;
+const ProgressBar = ({
+  inViewport,
+  forwardedRef,
+  enterCount,
+  percent,
+  color,
+  trigger,
+  delay,
+  ...props
+}) => {
   return (
     <Container>
       <Li>
         <Bar>
-          <SkillBar percent={percent} color={color} />
+          <SkillBar
+            ref={forwardedRef}
+            inViewport={inViewport}
+            percent={enterCount >= 1 ? percent : 0}
+            color={color}
+            delay={delay}
+            {...props}
+          />
         </Bar>
       </Li>
     </Container>
   );
 };
+
 export default ProgressBar;
