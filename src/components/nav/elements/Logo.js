@@ -11,7 +11,7 @@ const Logo = ({ name }) => {
       }}
     >
       <BikeLogo className="bike-logo" />
-      <span className="logo-header">{name}</span>
+      <span className="name">{name}</span>
 
       {/*{name.split("").map((char, index) => {*/}
       {/*  return (*/}

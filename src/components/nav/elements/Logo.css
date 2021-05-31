@@ -1,4 +1,4 @@
-.logo-header {
+.name {
   color: aliceblue;
   text-decoration: none;
   font-size: 2rem;
@@ -14,9 +14,14 @@
   -webkit-background-clip: text;
   cursor: pointer;
 }
-.logo-header:hover {
+.name:hover {
   color: transparent;
   font-size: 2.5rem;
+}
+@media (max-width: 290px) {
+  .name{
+    font-size:1.8rem
+  }
 }
 
 .logo-container {
@@ -42,7 +47,6 @@
   height: 80px;
   width: 70px;
   transition: 0.5s;
-
 }
 
 .bike-logo g {
