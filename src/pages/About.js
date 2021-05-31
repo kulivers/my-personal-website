@@ -4,6 +4,7 @@ import handleViewport from "react-in-viewport";
 const Container = styled.section`
   position: relative;
   min-height: calc(100vh - 80px);
+  max-height: calc(100vh - 80px);
   display: flex;
   flex-direction: row;
   justify-content: space-around;

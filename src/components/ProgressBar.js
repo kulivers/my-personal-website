@@ -2,7 +2,6 @@ import styled, { keyframes } from "styled-components";
 
 const Container = styled.div`
   color: whitesmoke;
-  width: 500px;
 `;
 const Li = styled.li`
   list-style: none;
